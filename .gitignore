@@ -1,0 +1,4 @@
+code/backend/crane.db
+code/backend/__pycache__/
+code/frontend/dist/
+code/frontend/node_modules/

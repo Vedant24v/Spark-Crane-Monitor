@@ -1,0 +1,122 @@
+[
+  {
+    "crane_id": "CR-101",
+    "ts": "2026-06-08T00:00:00",
+    "load_kg": 1250.0,
+    "motor_temp_c": 65.5,
+    "vibration_mm_s": 2.1,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-101",
+    "ts": "2026-06-08T00:15:00",
+    "load_kg": 1410.0,
+    "motor_temp_c": 72.8,
+    "vibration_mm_s": 2.4,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-101",
+    "ts": "2026-06-08T00:30:00",
+    "load_kg": 1540.0,
+    "motor_temp_c": 81.7,
+    "vibration_mm_s": 2.8,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-101",
+    "ts": "2026-06-08T00:45:00",
+    "load_kg": 990.0,
+    "motor_temp_c": 76.4,
+    "vibration_mm_s": 1.9,
+    "status": "IDLE"
+  },
+  {
+    "crane_id": "CR-101",
+    "ts": "2026-06-08T01:00:00",
+    "load_kg": 1680.0,
+    "motor_temp_c": 84.2,
+    "vibration_mm_s": 3.0,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-102",
+    "ts": "2026-06-08T00:00:00",
+    "load_kg": 880.0,
+    "motor_temp_c": 58.2,
+    "vibration_mm_s": 1.5,
+    "status": "IDLE"
+  },
+  {
+    "crane_id": "CR-102",
+    "ts": "2026-06-08T00:15:00",
+    "load_kg": 1320.0,
+    "motor_temp_c": 63.0,
+    "vibration_mm_s": 2.0,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-102",
+    "ts": "2026-06-08T00:30:00",
+    "load_kg": 1460.0,
+    "motor_temp_c": 69.4,
+    "vibration_mm_s": 2.2,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-102",
+    "ts": "2026-06-08T00:45:00",
+    "load_kg": 1515.0,
+    "motor_temp_c": 78.9,
+    "vibration_mm_s": 2.6,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-102",
+    "ts": "2026-06-08T01:00:00",
+    "load_kg": 970.0,
+    "motor_temp_c": 61.3,
+    "vibration_mm_s": 1.7,
+    "status": "IDLE"
+  },
+  {
+    "crane_id": "CR-103",
+    "ts": "2026-06-08T00:00:00",
+    "load_kg": 1120.0,
+    "motor_temp_c": 70.1,
+    "vibration_mm_s": 2.2,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-103",
+    "ts": "2026-06-08T00:15:00",
+    "load_kg": 1585.0,
+    "motor_temp_c": 79.6,
+    "vibration_mm_s": 2.9,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-103",
+    "ts": "2026-06-08T00:30:00",
+    "load_kg": 1715.0,
+    "motor_temp_c": 86.8,
+    "vibration_mm_s": 3.4,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-103",
+    "ts": "2026-06-08T00:45:00",
+    "load_kg": 1605.0,
+    "motor_temp_c": 83.1,
+    "vibration_mm_s": 3.1,
+    "status": "RUNNING"
+  },
+  {
+    "crane_id": "CR-103",
+    "ts": "2026-06-08T01:00:00",
+    "load_kg": 1010.0,
+    "motor_temp_c": 74.5,
+    "vibration_mm_s": 2.0,
+    "status": "IDLE"
+  }
+]
