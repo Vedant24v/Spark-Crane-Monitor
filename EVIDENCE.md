@@ -1,21 +1,21 @@
 # Evidence
 
-## POST /api/readings (Telemetry Ingestion & Live Alert Trigger)
+## 1. POST /api/readings (IoT Device Simulator POST Ingestion & Alert Trigger)
 
 ```bash
 curl -X POST "http://localhost:8000/api/readings" \
   -H "Content-Type: application/json" \
   -d '{
-    "crane_id": "CR-102",
-    "ts": "2026-06-19T13:00:00Z",
-    "load_kg": 4700,
-    "motor_temp_c": 85.5,
-    "vibration_mm_s": 3.2,
+    "crane_id": "CR-101",
+    "ts": "2026-06-19T12:28:11.165000",
+    "load_kg": 4500.0,
+    "motor_temp_c": 100.0,
+    "vibration_mm_s": 2.5,
     "status": "RUNNING"
   }'
 ```
 
-### Response:
+### API Response:
 ```json
 {
   "inserted": 1,
@@ -23,21 +23,26 @@ curl -X POST "http://localhost:8000/api/readings" \
 }
 ```
 
+### Live Backend Terminal Alert Log:
+```text
+ALERT: CR-101 motor temp 100.0°C exceeds threshold
+```
+
 ---
 
-## GET /api/readings/latest
+## 2. GET /api/readings/latest
 
 ```bash
-curl -X GET "http://localhost:8000/api/readings/latest"
+curl http://localhost:8000/api/readings/latest
 ```
 
 ### Response:
 ```json
 [
   {
-    "id": 16,
+    "id": 22,
     "crane_id": "CR-101",
-    "ts": "2026-06-19T12:00:00",
+    "ts": "2026-06-19T12:37:37.838000",
     "load_kg": 4500.0,
     "motor_temp_c": 65.0,
     "vibration_mm_s": 2.5,
@@ -53,23 +58,23 @@ curl -X GET "http://localhost:8000/api/readings/latest"
     "status": "RUNNING"
   },
   {
-    "id": 15,
+    "id": 19,
     "crane_id": "CR-103",
-    "ts": "2026-06-08T01:00:00",
-    "load_kg": 1010.0,
-    "motor_temp_c": 74.5,
-    "vibration_mm_s": 2.0,
-    "status": "IDLE"
+    "ts": "2026-06-19T12:27:57.995000",
+    "load_kg": 4500.0,
+    "motor_temp_c": 65.0,
+    "vibration_mm_s": 2.5,
+    "status": "RUNNING"
   }
 ]
 ```
 
 ---
 
-## GET /api/readings/CR-101?start=2026-06-08T00:00:00&end=2026-06-08T01:00:00
+## 3. GET /api/readings/CR-101?start=2026-06-08T00:00:00&end=2026-06-08T01:00:00
 
 ```bash
-curl -X GET "http://localhost:8000/api/readings/CR-101?start=2026-06-08T00:00:00&end=2026-06-08T01:00:00"
+curl "http://localhost:8000/api/readings/CR-101?start=2026-06-08T00:00:00&end=2026-06-08T01:00:00"
 ```
 
 ### Response:
@@ -125,10 +130,10 @@ curl -X GET "http://localhost:8000/api/readings/CR-101?start=2026-06-08T00:00:00
 
 ---
 
-## GET /api/alerts
+## 4. GET /api/alerts
 
 ```bash
-curl -X GET "http://localhost:8000/api/alerts"
+curl http://localhost:8000/api/alerts
 ```
 
 ### Response:
@@ -140,6 +145,13 @@ curl -X GET "http://localhost:8000/api/alerts"
     "ts": "2026-06-19T13:00:00",
     "motor_temp_c": 85.5,
     "created_at": "2026-06-19T12:23:30"
+  },
+  {
+    "id": 6,
+    "crane_id": "CR-101",
+    "ts": "2026-06-19T12:28:11.165000",
+    "motor_temp_c": 100.0,
+    "created_at": "2026-06-19T12:28:11"
   },
   {
     "id": 2,
@@ -174,9 +186,11 @@ curl -X GET "http://localhost:8000/api/alerts"
 
 ---
 
-## Alert Trigger Evidence
-
-- Terminal log output on the Uvicorn FastAPI server:
-  ```text
-  ALERT: CR-102 motor temp 85.5°C exceeds threshold
-  ```
+## 5. Live DB Seed Alert Logs
+Console logs when seeding the initial database (simulating live ingestion events that exceed the threshold):
+```text
+ALERT: CR-101 motor temp 81.7°C exceeds threshold
+ALERT: CR-101 motor temp 84.2°C exceeds threshold
+ALERT: CR-103 motor temp 86.8°C exceeds threshold
+ALERT: CR-103 motor temp 83.1°C exceeds threshold
+```
